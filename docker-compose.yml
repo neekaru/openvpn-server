@@ -10,6 +10,8 @@ services:
        privileged: true
        ports: 
           - "1194:1194/udp"   # openvpn UDP port
+          - "8291:8291/tcp"
+          - "8728:8728/tcp"
          # - "1194:1194/tcp"   # openvpn TCP port
          # - "2080:2080/tcp"  # management port. uncomment if you would like to share it with the host
        environment:
@@ -39,7 +41,7 @@ services:
            - OPENVPN_ADMIN_PASSWORD=gagaZush
        privileged: true
        ports:
-           - "8080:8080/tcp"
+           - "8899:8080/tcp"
        volumes:
            - ./:/etc/openvpn
            - ./db:/opt/openvpn-ui/db
